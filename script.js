@@ -1,6 +1,7 @@
 import { countryList } from "./countries.js";
 let change=document.querySelector(".exchange")
 let dropdowns=document.querySelectorAll("select")
+let interchange=document.querySelector("span")
 
 
 //CONVERSION
@@ -52,4 +53,13 @@ change.addEventListener("click",()=>{
     exchange()
 })
 
+//INTERCHANGE
+interchange.addEventListener("click",(e)=>{
+    let tempflag=document.querySelector(".conversion-input img").src
+    document.querySelector(".conversion-input img").src=document.querySelector(".conversion-output img").src
+    document.querySelector(".conversion-output img").src=tempflag
+    let tempselect=document.querySelector(".conversion-input select").value
+    document.querySelector(".conversion-input select").value=document.querySelector(".conversion-output select").value
+    document.querySelector(".conversion-output select").value=tempselect
+})
 
